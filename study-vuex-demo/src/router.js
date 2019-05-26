@@ -14,6 +14,21 @@ export default new Router({
       component: Home
     },
     {
+      path: '/computed',
+      name: 'computedName',
+      component: () => import('./components/ComputedDemo.vue')
+    },
+    {
+      path: '/arrayDemo',
+      name: 'arrayDemo',
+      component: () => import('./components/ArrayDemo.vue')
+    },
+    {
+      path: '/objectDemo',
+      name: 'objectDemo',
+      component: () => import('./components/ObjectDemo.vue')
+    },
+    {
       path: '/about',
       name: 'about',
       // route level code-splitting
