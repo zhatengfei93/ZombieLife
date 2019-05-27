@@ -29,6 +29,11 @@ export default new Router({
       component: () => import('./components/ObjectDemo.vue')
     },
     {
+      path: '/formDemo',
+      name: 'formDemo',
+      component: () => import('./components/FormDemo.vue')
+    },
+    {
       path: '/about',
       name: 'about',
       // route level code-splitting

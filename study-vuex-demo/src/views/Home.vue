@@ -28,15 +28,27 @@
     <router-link to="/computed">Go to computed</router-link><br />
     <router-link to="/arrayDemo">Go to arrayDemo</router-link><br />
     <router-link to="/objectDemo">Go to objectDemo</router-link><br />
+    <router-link to="/formDemo">Go to formDemo</router-link><br />
+    <hello-world v-model="inputValue"></hello-world>
+    <hallo :filteredTodos="posts">
+      <template v-slot:todo="{ todo: item }">
+        <span v-if="item.isComplate">✅</span>
+        {{ item.title }}
+      </template>
+    </hallo>
   </div>
 </template>
 
 <script>
 import BlogPost from '@/components/BlogPost'
+import HelloWorld from '@/components/HelloWorld'
+import Hallo from '@/components/Hallo'
 export default {
   name: 'home',
   components: {
-    BlogPost
+    BlogPost,
+    HelloWorld,
+    Hallo
   },
   data() {
     return {
@@ -47,7 +59,8 @@ export default {
         {
           id: '123',
           title: '体坛风云',
-          content: '; and 1=1 and 1=2'
+          content: '; and 1=1 and 1=2',
+          isComplate: true
         },
         {
           id: '456',
@@ -62,7 +75,8 @@ export default {
       ],
       postFontSize: 12,
       searchText: '',
-      toogleData: false
+      toogleData: false,
+      inputValue: ''
     }
   },
   created() {
