@@ -29,26 +29,30 @@
     <router-link to="/arrayDemo">Go to arrayDemo</router-link><br />
     <router-link to="/objectDemo">Go to objectDemo</router-link><br />
     <router-link to="/formDemo">Go to formDemo</router-link><br />
-    <hello-world v-model="inputValue"></hello-world>
-    <hallo :filteredTodos="posts">
+    <router-link to="/nexttick">Go to NextTick</router-link><br />
+    <hello-world v-model="inputValue"></hello-world><br />
+    <base-input label="说明:" v-model="baseValues"></base-input>{{ baseValues }}
+    <!-- <hallo :filteredTodos="posts">
       <template v-slot:todo="{ todo: item }">
         <span v-if="item.isComplate">✅</span>
         {{ item.title }}
       </template>
-    </hallo>
+    </hallo> -->
   </div>
 </template>
 
 <script>
 import BlogPost from '@/components/BlogPost'
 import HelloWorld from '@/components/HelloWorld'
-import Hallo from '@/components/Hallo'
+import BaseInput from '@/components/BaseInput'
+// import Hallo from '@/components/Hallo'
 export default {
   name: 'home',
   components: {
     BlogPost,
     HelloWorld,
-    Hallo
+    BaseInput
+    // Hallo
   },
   data() {
     return {
@@ -76,7 +80,8 @@ export default {
       postFontSize: 12,
       searchText: '',
       toogleData: false,
-      inputValue: ''
+      inputValue: '',
+      baseValues: 'base'
     }
   },
   created() {

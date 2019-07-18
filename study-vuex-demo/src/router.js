@@ -34,6 +34,16 @@ export default new Router({
       component: () => import('./components/FormDemo.vue')
     },
     {
+      path: '/nexttick',
+      name: 'nextTick',
+      component: () => import('./components/NextTick.vue')
+    },
+      {
+          path: '/vueprops',
+          name: 'componentApple',
+          component: () => import('./views/vuePropDemo/componentApple.vue')
+      },
+    {
       path: '/about',
       name: 'about',
       // route level code-splitting
